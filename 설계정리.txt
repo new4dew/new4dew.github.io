@@ -1,4 +1,4 @@
-주제 : 글로벌 서비스를 위한 시스템 구축 시 아키텍처 검토사항 및 시스템 설계 방안
+글로벌 서비스를 위한 시스템 구축 시 아키텍처 검토사항 및 시스템 설계 방안
 
 1. 아키텍처 검토사항
 1.1. 클라우드 (AWS 멀티리전)
@@ -26,4 +26,9 @@ K8S
 Token
 
 2.3. MSA
+
+
+9. 참고
+글로벌 서비스 구축을 위한 AWS 멀티 리전 아키텍처 구성 가이드
+https://aws.amazon.com/ko/blogs/korea/creating-a-multi-region-application-with-aws-services/
 
