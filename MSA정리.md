@@ -15,9 +15,25 @@
 2. 타 MSA 연계기능 및 리턴 식별
 3. 핵심기능 분류 (Compensation Pivot Retry)
    - 본연 업무 완료되는 핵심 프로세스가 Pivot
-   - Pivot 이전에 실패 시 보상이 필요한 경우 Compensation
+   - Pivot 이전에 실패 시 보상이 필요한 경우 Compensation (**Pivot인 경우 보상트랜잭션 안 쓰고 Pivot이라서 안썼다고 써**)
    - 실패시에도 본연의 업무 기능 Pivot에 영향 없거나 후행 재처리가 가능하면 Retry
 4. 업무 순서 조정
    - 보상 최소화
    - Compensation -> Pivot -> Retry 순으로 프로세스 배치
      
+# 비격리 대책
+## 문제
+### Dirty Read
+Saga가 진행 중에 다른 트랜잭션이나 Saga가 아직 커밋되지 않은 변경분을 읽어가는 경우
+### Non-Repeatable Read
+한 트랜잭션 내에서 같은 key 가진 row를 두 번 읽었는데 그 사이에 값이 변경/삭제된 경우
+### Lost Update
+한 Saga의 변경분을 다른 Saga가 덮어쓰는 경우
+
+## 대책
+### Semantic Lock
+application 수준의 락, 플래그 셋팅
+### Optimistic Lock
+값을 다시 읽어서 Lost Update 방지
+### Pessimistic Lock
+DB에서 주로 처리하는 행단위 lock (select for update)
