@@ -49,6 +49,9 @@ DB에서 주로 처리하는 행단위 lock (select for update)
 4. 성능과 유저 경험
 - 재기동 및 scale 시간 단축
 
-# Cloud vs On-Premise
-https://www.ridge.co/blog/cloud-vs-on-premise/
-https://www.geeksforgeeks.org/on-premises-vs-on-cloud/
+# 참고
+## Cloud vs On-Premise
+- https://www.ridge.co/blog/cloud-vs-on-premise/
+- https://www.geeksforgeeks.org/on-premises-vs-on-cloud/
+## MSA
+- https://techblog.woowahan.com/7835/
