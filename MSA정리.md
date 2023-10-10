@@ -37,3 +37,18 @@ application 수준의 락, 플래그 셋팅
 값을 다시 읽어서 Lost Update 방지
 ### Pessimistic Lock
 DB에서 주로 처리하는 행단위 lock (select for update)
+
+# 성능 개선
+## MSA 도입으로 인한 개선
+1. 더 신속한 업데이트
+- Service별 독립적 배포
+2. 독립적인 확장성
+- scale in/out
+3. 장애전파 방지
+- 장애 격리
+4. 성능과 유저 경험
+- 재기동 및 scale 시간 단축
+
+# Cloud vs On-Premise
+https://www.ridge.co/blog/cloud-vs-on-premise/
+https://www.geeksforgeeks.org/on-premises-vs-on-cloud/
