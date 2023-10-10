@@ -14,7 +14,7 @@
 1. 업무 프로세스 분석/자료 작성
 2. 타 MSA 연계기능 및 리턴 식별
 3. 핵심기능 분류 (Compensation Pivot Retry)
-   - 본연 업무 완료되는 핵심 프로세스가 Pivot (**Pivot인 경우 보상트랜잭션 안 쓰고 Pivot이라서 안썼다고 써**)
+   - 본연 업무 완료되는 핵심 프로세스가 Pivot (**Pivot인 경우 보상트랜잭션 안 쓰고 Local Transaction 처리로 Rollback이라고 기재, 또는 명시적 상태 변경을 위한 추가라고 적기**)
    - Pivot 이전에 실패 시 보상이 필요한 경우 Compensation 
    - 실패시에도 본연의 업무 기능 Pivot에 영향 없거나 후행 재처리가 가능하면 Retry
 4. 업무 순서 조정
